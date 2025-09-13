@@ -1,5 +1,3 @@
-from logging import exception
-from flask import send_from_directory
 from flask import Flask, render_template, request, url_for, redirect, session, send_file
 from library.person.person import *
 from library.function import functions
