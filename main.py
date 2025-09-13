@@ -1,17 +1,22 @@
 from flask import Flask, render_template, request, url_for, redirect, session, send_file
 from library.person.person import *
 from library.function import functions
+from dotenv import load_dotenv
+import os, ngrok, secrets, logging, json
 
-import secrets
-import logging
-import json
-import os
-
+# Disable Flask's default logging to keep the console clean
 log = logging.getLogger('werkzeug')
 log.disabled = True
 
+
+# App initializations
 app = Flask(__name__)
 app.secret_key = secrets.token_urlsafe(16)
+config = functions.config()
+load_dotenv()
+token = os.getenv("NGROK_TOKEN")
+DOMAIN = os.getenv("DOMAIN")
+PORT = config["PORT"]
 
 
 @app.route("/error")
@@ -31,11 +36,10 @@ def index():
             _person_info = json.loads(_person)
             _person_info["color"] = functions.randcol()
             _person_info["recorded"] = session['_recorded']
-            session.clear()
             return render_template("information.html", _person=_person_info)
     except KeyError:
         pass
-    return render_template("index.html")
+    return render_template("index.html", date=config["date"])
 
 @app.route("/record")
 def record():
@@ -174,4 +178,6 @@ def logout():
     return redirect(url_for("index"))
 
 if(__name__ == "__main__"):
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    server = ngrok.forward(PORT, authtoken=token, domain=DOMAIN)
+    print(f" * Server is live at {server.url()}")
+    app.run(host="0.0.0.0", port=PORT, debug=False)

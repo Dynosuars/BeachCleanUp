@@ -12,6 +12,13 @@ def _config() -> dict:
         configed.close()
     return config
 
+def config() -> dict:
+    import json
+    with open("config.json") as file:
+        config = json.load(file)
+        file.close()
+    return config
+
 def _config_admin() -> dict:
     import json
     with open("config.json") as configed:
