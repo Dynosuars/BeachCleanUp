@@ -217,7 +217,7 @@
       <h1
         style="font-size: 32px;text-align: center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
         Map to Kaiser Park from John Dewey High School!</h1>
-      <img src="https://i.postimg.cc/sf5WZRSL/map.png" class="img-thumbnail" alt="Event Poster">
+      <img src="{{url_for('static', filename='images/map.png')}}" class="img-thumbnail" alt="Event Poster">
     </div>
 
 
@@ -227,7 +227,7 @@
       <div class="gallery-scroll">
         <div class="container-fluid memory-item">
           <div class="card img-display resize-card">
-            <img class="card-img-top card-img" src="https://i.postimg.cc/Dy2SJ47W/beachcleanup1-1.png"
+            <img class="card-img-top card-img" src="{{url_for('static', filename='images/beachcleanup1-1.png')}}"
               alt="Beach Cleanup">
             <div class="card-body">
               <h2 class="card-title">Verrazano-Narrows Bridge</h2>
@@ -243,7 +243,7 @@
 
         <div class="container-fluid memory-item">
           <div class="card img-display">
-            <img class="card-img-top card-img" src="https://i.postimg.cc/DyFXrYPw/final.jpg" alt="Beach Cleanup">
+            <img class="card-img-top card-img" src="{{url_for('static', filename='images/final.jpg')}}" alt="Beach Cleanup">
             <div class="card-body">
               <h2 class="card-title">Kaiser Park - 2024</h2>
               <p class="card-infos">Kaiser Park's last years cleanup (2024)<br>
@@ -257,7 +257,7 @@
 
         <div class="container-fluid memory-item">
           <div class="card img-display">
-            <img class="card-img-top card-img" src="https://i.postimg.cc/Hn07GQdm/roboticscleanup.jpg"
+            <img class="card-img-top card-img" src="{{url_for('static', filename='images/roboticscleanup.jpg')}}"
               alt="Beach Cleanup">
             <div class="card-body">
               <h2 class="card-title">Kaiser Park Cleanup - Robotics Team</h2>
@@ -407,9 +407,9 @@
         setTimeout(startAutoScroll, 1000);
       });
     </script>
-
-    <!-- Footer section -->
-    <footer class="text-center text-white" style="background-color:#3c8dbc;" id="footer">
+  </main>
+  <!-- Footer section -->
+    <footer class="text-center text-white" style="background-color:#3c8dbc; width: 100%;" id="footer">
       <div class="container p-4">
         <section class="mb-4">
           <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998"
@@ -482,7 +482,6 @@
 
 
     </footer>
-  </main>
 
   <!-- Record form modal -->
   <div class="modal fade" id="modal-record">
