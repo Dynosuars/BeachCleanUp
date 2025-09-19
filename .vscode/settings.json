@@ -1,4 +1,12 @@
 {
-    "python-envs.defaultEnvManager": "ms-python.python:system",
+    // Use the workspace .venv Python interpreter on Windows
+    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+    // For older Python extensions that still read this
+    "python.pythonPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+    // Make sure the terminal activates the environment automatically
+    "python.terminal.activateEnvironment": true
+}
+{
+    "python-envs.defaultEnvManager": "ms-python.python:venv",
     "python-envs.pythonProjects": []
 }
