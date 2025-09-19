@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Estuary Beach Event</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="{{url_for('static', filename='images/favicon.png')}}" type="image/x-icon">
-        <link rel="stylesheet" href="{{url_for('static', filename='style/styles.css')}}">
-        <link rel="stylesheet" href="{{url_for('static', filename='style/style.css')}}">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-    </head>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Estuary Beach Event</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{{url_for('static', filename='images/favicon.png')}}" type="image/x-icon">
+  <link rel="stylesheet" href="{{url_for('static', filename='style/styles.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='style/style.css')}}">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+</head>
+
 <body>
-<div class="blue-banner">
-  <div class="banner-content">
-    <h1>It's My Estuary Day!</h1>
-    <p>Kaiser Park Beach Cleanup Event</p>
-    <p>-- Saturday, September 20th --</p>
+  <div class="blue-banner">
+    <div class="banner-content">
+      <h1>It's My Estuary Day!</h1>
+      <p>Kaiser Park Beach Cleanup Event</p>
+      <p>-- Saturday, September 20th --</p>
+    </div>
   </div>
-</div>
 
 
-<button id="sidebarToggle" aria-label="Open menu" class="sidebar-toggle-btn">
-  ☰
-</button>
+  <button id="sidebarToggle" aria-label="Open menu" class="sidebar-toggle-btn">
+    ☰
+  </button>
 
-<nav id="sidebar" class="sidebar">
-  <div class="sidebar-header">
-    <h1>It's My Estuary Day!</h1>
-    <button id="sidebarClose" aria-label="Close menu" class="sidebar-close-btn">&times;</button>
-  </div>
-  <ul class="sidebar-nav">
-    <li><a href="#about">About</a></li>
-    <li><a href="#memory">Memory</a></li>
-    <li><a href="#footer">Footer</a></li>
-  </ul>
-  <button class="btn-admin sidebar-btn" type="button" data-bs-toggle="modal" data-bs-target="#admin-login" id="adminbtn">Admin login</button>
-  <button class="record-btn sidebar-btn" type="button" data-bs-toggle="modal" data-bs-target="#modal-record" id="recordbtn2">Record yourself!</button>
-</nav>
+  <nav id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h1>It's My Estuary Day!</h1>
+      <button id="sidebarClose" aria-label="Close menu" class="sidebar-close-btn">&times;</button>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="#about">About</a></li>
+      <li><a href="#memory">Memory</a></li>
+      <li><a href="#footer">Footer</a></li>
+    </ul>
+    <button class="btn-admin sidebar-btn" type="button" data-bs-toggle="modal" data-bs-target="#admin-login"
+      id="adminbtn">Admin login</button>
+    <button class="record-btn sidebar-btn" type="button" data-bs-toggle="modal" data-bs-target="#modal-record"
+      id="recordbtn2">Record yourself!</button>
+  </nav>
 
-<!--  black -->
-<div class="sidebar-overlay"></div>
+  <!--  black -->
+  <div class="sidebar-overlay"></div>
 
   <script>
-  const sidebar = document.getElementById('sidebar');
-  const toggleBtn = document.getElementById('sidebarToggle');
-  const closeBtn = document.getElementById('sidebarClose');
-  const overlay = document.querySelector('.sidebar-overlay');
-  const admin = document.getElementById('adminbtn');
-  const record = document.getElementById('recordbtn2');
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('sidebarToggle');
+    const closeBtn = document.getElementById('sidebarClose');
+    const overlay = document.querySelector('.sidebar-overlay');
+    const admin = document.getElementById('adminbtn');
+    const record = document.getElementById('recordbtn2');
 
     toggleBtn.addEventListener('click', () => {
       sidebar.classList.add('active');
@@ -65,11 +72,11 @@
       toggleBtn.classList.remove('hidden');
     });
 
-    admin.addEventListener('click', () =>{
+    admin.addEventListener('click', () => {
       sidebar.classList.remove('active');
       toggleBtn.classList.remove('hidden');
     });
-    record.addEventListener('click', () =>{
+    record.addEventListener('click', () => {
       sidebar.classList.remove('active');
       toggleBtn.classList.remove('hidden');
     });
@@ -79,385 +86,402 @@
 
   <main id="mainContent">
     <!-- About section -->
-<div class="about-container" id="about">
-  <div class="about-content">
-    <h2 class="record-text">Click below to record your contribution!</h2>
-    <button class="record-btn" type="button" data-bs-toggle="modal" data-bs-target="#modal-record">Record yourself!</button>
-    
-    <h2 class="div-title" id="aboutdisplay"></h2>
-    <div class="event-description"> <!-- New container -->
-      <p id="aboutcontent"></p>
+    <div class="about-container" id="about">
+      <div class="about-content">
+        <h2 class="record-text">Click below to record your contribution!</h2>
+        <button class="record-btn" type="button" data-bs-toggle="modal" data-bs-target="#modal-record">Record
+          yourself!</button>
+
+        <h2 class="div-title" id="aboutdisplay"></h2>
+        <div class="event-description"> <!-- New container -->
+          <p id="aboutcontent"></p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-      <script>
-        let iteration = 0;
-        const txt = 'About the Event';
-        const speed = 25;
-        const animated3 = document.getElementById("aboutdisplay");
+    <script>
+      let iteration = 0;
+      const txt = 'About the Event';
+      const speed = 25;
+      const animated3 = document.getElementById("aboutdisplay");
 
-        function typeinabout(){
-          if (iteration < txt.length) {
-            var _re = txt.charAt(iteration)
-            animated3.innerHTML += _re;
-            setTimeout(typeinabout, speed);
-            iteration++;
-            return true;
-          }
-          return false;
+      function typeinabout() {
+        if (iteration < txt.length) {
+          var _re = txt.charAt(iteration)
+          animated3.innerHTML += _re;
+          setTimeout(typeinabout, speed);
+          iteration++;
+          return true;
         }
+        return false;
+      }
 
-        const content = "It's My Estuary Day (IMED) is a beach cleanup event at Kaiser Park on Saturday, September 20th, from 10 AM to 12 PM. This is a fantastic opportunity to support our community, enjoy nature, and meet people from across New York!";
-        const about = document.getElementById("aboutcontent");
-        let iter = 0;
+      const content = "It's My Estuary Day (IMED) is a beach cleanup event at Kaiser Park on Saturday, September 20th, from 10 AM to 12 PM. This is a fantastic opportunity to support our community, enjoy nature, and meet people from across New York!";
+      const about = document.getElementById("aboutcontent");
+      let iter = 0;
 
-        function typeinabout2(){
-          if(iter < content.length){
-            about.innerHTML += content.charAt(iter);
-            iter++;
-            setTimeout(typeinabout2, speed);
-          }
+      function typeinabout2() {
+        if (iter < content.length) {
+          about.innerHTML += content.charAt(iter);
+          iter++;
+          setTimeout(typeinabout2, speed);
         }
+      }
 
-        document.addEventListener("DOMContentLoaded", (event)=> {
-          typeinabout();
-          typeinabout2();
-        });
+      document.addEventListener("DOMContentLoaded", (event) => {
+        typeinabout();
+        typeinabout2();
+      });
 
-      </script>
+    </script>
     </div>
 
 
     <!-- Event poster -->
     <div class="poster container-fluid">
-      <img src="https://i.postimg.cc/Pr482zSz/poster.jpg" class="img-thumbnail" alt="Event Poster">
+      <img src="{{url_for('static', filename='images/poster.png')}}" class="img-thumbnail" alt="Event Poster">
     </div>
 
     <!--directions-->
-<div class="directions-container">
-  <h3 class="directions-heading">Directions</h3>
-  <div class="map-buttons">
-    <a href="https://maps.app.goo.gl/twGrrG7c9sSbZAUf9" target="_blank" class="map-button google-maps">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps icon" class="map-icon">
-      Google Maps
-    </a>
-    <a href="https://maps.apple.com/place?place-id=I9691C19499F91C2B&_provider=9902" target="_blank" class="map-button apple-maps">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Apple_Maps_Logo_3D.png" alt="Apple Maps icon" class="map-icon">
-      Apple Maps
-    </a>
-  </div>
-</div>
+    <div class="directions-container">
+      <h3 class="directions-heading">Directions</h3>
+      <div class="map-buttons">
+        <a href="https://maps.app.goo.gl/twGrrG7c9sSbZAUf9" target="_blank" class="map-button google-maps">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+            alt="Google Maps icon" class="map-icon">
+          Google Maps
+        </a>
+        <a href="https://maps.apple.com/place?place-id=I9691C19499F91C2B&_provider=9902" target="_blank"
+          class="map-button apple-maps">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Apple_Maps_Logo_3D.png" alt="Apple Maps icon"
+            class="map-icon">
+          Apple Maps
+        </a>
+      </div>
+    </div>
 
-<style>
-.directions-container {
-  text-align: center;
-  margin: 20px 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
+    <style>
+      .directions-container {
+        text-align: center;
+        margin: 20px 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
 
-.directions-heading {
-  color: #333;
-  margin-bottom: 12px;
-  font-weight: 500;
-}
+      .directions-heading {
+        color: #333;
+        margin-bottom: 12px;
+        font-weight: 500;
+      }
 
-.map-buttons {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-}
+      .map-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
 
-.map-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
+      .map-button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
 
-.google-maps {
-  background-color: #4285F4;
-  color: white;
-}
+      .google-maps {
+        background-color: #4285F4;
+        color: white;
+      }
 
-.apple-maps {
-  background-color: #000;
-  color: white;
-}
+      .apple-maps {
+        background-color: #000;
+        color: white;
+      }
 
-.map-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+      .map-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
 
-.map-icon {
-  width: 18px;
-  height: 18px;
-}
-</style>
+      .map-icon {
+        width: 18px;
+        height: 18px;
+      }
+    </style>
 
-      <!-- Event poster -->
+    <!-- Event poster -->
     <div class="poster container-fluid">
-      <h1 style="font-size: 32px;text-align: center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Map to Kaiser Park from John Dewey High School!</h1>
+      <h1
+        style="font-size: 32px;text-align: center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        Map to Kaiser Park from John Dewey High School!</h1>
       <img src="https://i.postimg.cc/sf5WZRSL/map.png" class="img-thumbnail" alt="Event Poster">
     </div>
 
 
 
     <!-- Memory section -->
-<div class="gallery-container">
-  <div class="gallery-scroll">
-    <div class="container-fluid memory-item">
-      <div class="card img-display resize-card">
-        <img class="card-img-top card-img" src="https://i.postimg.cc/Dy2SJ47W/beachcleanup1-1.png" alt="Beach Cleanup">
-        <div class="card-body">
-          <h2 class="card-title">Verrazano-Narrows Bridge</h2>
-          <p class="card-infos">A bridge connecting Staten Island and Brooklyn, completed in 1959 (65 years ago).<br>
-            For more information, visit <a href="https://en.wikipedia.org/wiki/Verrazzano-Narrows_Bridge">Wikipedia</a>
-          </p>
-          <h3 class="card-author">Photo by: Alex Liu, at Kaiser Park, Coney Island</h3>
+    <div class="gallery-container">
+      <div class="gallery-scroll">
+        <div class="container-fluid memory-item">
+          <div class="card img-display resize-card">
+            <img class="card-img-top card-img" src="https://i.postimg.cc/Dy2SJ47W/beachcleanup1-1.png"
+              alt="Beach Cleanup">
+            <div class="card-body">
+              <h2 class="card-title">Verrazano-Narrows Bridge</h2>
+              <p class="card-infos">A bridge connecting Staten Island and Brooklyn, completed in 1959 (65 years
+                ago).<br>
+                For more information, visit <a
+                  href="https://en.wikipedia.org/wiki/Verrazzano-Narrows_Bridge">Wikipedia</a>
+              </p>
+              <h3 class="card-author">Photo by: Alex Liu, at Kaiser Park, Coney Island</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid memory-item">
+          <div class="card img-display">
+            <img class="card-img-top card-img" src="https://i.postimg.cc/DyFXrYPw/final.jpg" alt="Beach Cleanup">
+            <div class="card-body">
+              <h2 class="card-title">Kaiser Park - 2024</h2>
+              <p class="card-infos">Kaiser Park's last years cleanup (2024)<br>
+                For more information about Kaiser Park, visit <a
+                  href="https://en.wikipedia.org/wiki/Kaiser_Park">Wikipedia</a>
+              </p>
+              <h3 class="card-author">Photo by: Ms.Wood, at Kaiser Park, Coney Island</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid memory-item">
+          <div class="card img-display">
+            <img class="card-img-top card-img" src="https://i.postimg.cc/Hn07GQdm/roboticscleanup.jpg"
+              alt="Beach Cleanup">
+            <div class="card-body">
+              <h2 class="card-title">Kaiser Park Cleanup - Robotics Team</h2>
+              <p class="card-infos">Kaiser Park's last years cleanup - Robotics Team (2024)<br>
+                For more information about Kaiser Park, visit <a
+                  href="https://en.wikipedia.org/wiki/Kaiser_Park">Wikipedia</a>
+              </p>
+              <h3 class="card-author">Photo by: Ms.Wood, at Kaiser Park, Coney Island</h3>
+            </div>
+          </div>
         </div>
       </div>
+
+      <button class="scroll-btn left-scroll-btn" aria-label="Previous"><span>&lt;</span></button>
+      <button class="scroll-btn right-scroll-btn" aria-label="Next"><span>&gt;</span></button>
     </div>
-    
-    <div class="container-fluid memory-item">
-      <div class="card img-display">
-        <img class="card-img-top card-img" src="https://i.postimg.cc/DyFXrYPw/final.jpg" alt="Beach Cleanup">
-        <div class="card-body">
-          <h2 class="card-title">Kaiser Park - 2024</h2>
-          <p class="card-infos">Kaiser Park's last years cleanup (2024)<br>
-            For more information about Kaiser Park, visit <a href="https://en.wikipedia.org/wiki/Kaiser_Park">Wikipedia</a>
-          </p>
-          <h3 class="card-author">Photo by: Ms.Wood, at Kaiser Park, Coney Island</h3>
-        </div>
-      </div>
-    </div>
-    
-    <div class="container-fluid memory-item">
-      <div class="card img-display">
-        <img class="card-img-top card-img" src="https://i.postimg.cc/Hn07GQdm/roboticscleanup.jpg" alt="Beach Cleanup">
-        <div class="card-body">
-          <h2 class="card-title">Kaiser Park Cleanup - Robotics Team</h2>
-          <p class="card-infos">Kaiser Park's last years cleanup - Robotics Team (2024)<br>
-            For more information about Kaiser Park, visit <a href="https://en.wikipedia.org/wiki/Kaiser_Park">Wikipedia</a>
-          </p>
-          <h3 class="card-author">Photo by: Ms.Wood, at Kaiser Park, Coney Island</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-<button class="scroll-btn left-scroll-btn" aria-label="Previous"><span>&lt;</span></button>
-<button class="scroll-btn right-scroll-btn" aria-label="Next"><span>&gt;</span></button>
-</div>
 
-<!--script for scrolling imgs-->
+    <!--script for scrolling imgs-->
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const gallery = document.querySelector('.gallery-scroll');
-  const leftBtn = document.querySelector('.left-scroll-btn');
-  const rightBtn = document.querySelector('.right-scroll-btn');
-  const items = document.querySelectorAll('.memory-item');
-  let autoScrollInterval;
-  let isScrolling = false;
-  let isTouching = false;
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const gallery = document.querySelector('.gallery-scroll');
+        const leftBtn = document.querySelector('.left-scroll-btn');
+        const rightBtn = document.querySelector('.right-scroll-btn');
+        const items = document.querySelectorAll('.memory-item');
+        let autoScrollInterval;
+        let isScrolling = false;
+        let isTouching = false;
 
-  // Initialize buttons
-  updateButtonVisibility();
+        // Initialize buttons
+        updateButtonVisibility();
 
-  // Button scrolling
-  leftBtn.addEventListener('click', () => {
-    if (isScrolling) return;
-    isScrolling = true;
-    gallery.scrollBy({
-      left: -getScrollAmount(),
-      behavior: 'smooth'
-    });
-    resetAutoScroll();
-    setTimeout(() => isScrolling = false, 500);
-  });
-
-  rightBtn.addEventListener('click', () => {
-    if (isScrolling) return;
-    isScrolling = true;
-    gallery.scrollBy({
-      left: getScrollAmount(),
-      behavior: 'smooth'
-    });
-    resetAutoScroll();
-    setTimeout(() => isScrolling = false, 500);
-  });
-
-  // Calculate scroll amount based on item width
-  function getScrollAmount() {
-    return items[0].offsetWidth + 20; // 20px gap
-  }
-
-  // Auto-scrolling functionality - UPDATED TO HANDLE ALL ITEMS
-  function startAutoScroll() {
-    clearInterval(autoScrollInterval);
-    autoScrollInterval = setInterval(() => {
-      if (isScrolling || isTouching) return;
-      
-      const scrollAmount = getScrollAmount();
-      const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-      const currentScroll = gallery.scrollLeft;
-      
-      // If we're at or near the end, scroll back to start
-      if (currentScroll + scrollAmount >= maxScroll - 10) {
-        gallery.scrollTo({
-          left: 0,
-          behavior: 'smooth'
-        });
-      } 
-      // If we're not at the last item, scroll to next item
-      else {
-        // Find which item we should scroll to
-        let targetItem;
-        for (let i = 0; i < items.length; i++) {
-          const item = items[i];
-          const itemLeft = item.offsetLeft;
-          const itemRight = itemLeft + item.offsetWidth;
-          
-          // Find the first item that's not fully visible
-          if (itemRight > currentScroll + gallery.clientWidth) {
-            targetItem = item;
-            break;
-          }
-        }
-        
-        // If we found a target item, scroll to it
-        if (targetItem) {
-          gallery.scrollTo({
-            left: targetItem.offsetLeft - 10, // 10px padding
-            behavior: 'smooth'
-          });
-        }
-        // Otherwise scroll by the default amount
-        else {
+        // Button scrolling
+        leftBtn.addEventListener('click', () => {
+          if (isScrolling) return;
+          isScrolling = true;
           gallery.scrollBy({
-            left: scrollAmount,
+            left: -getScrollAmount(),
             behavior: 'smooth'
           });
+          resetAutoScroll();
+          setTimeout(() => isScrolling = false, 500);
+        });
+
+        rightBtn.addEventListener('click', () => {
+          if (isScrolling) return;
+          isScrolling = true;
+          gallery.scrollBy({
+            left: getScrollAmount(),
+            behavior: 'smooth'
+          });
+          resetAutoScroll();
+          setTimeout(() => isScrolling = false, 500);
+        });
+
+        // Calculate scroll amount based on item width
+        function getScrollAmount() {
+          return items[0].offsetWidth + 20; // 20px gap
         }
-      }
-    }, 5000);
-  }
 
-  function resetAutoScroll() {
-    clearInterval(autoScrollInterval);
-    startAutoScroll();
-  }
+        // Auto-scrolling functionality - UPDATED TO HANDLE ALL ITEMS
+        function startAutoScroll() {
+          clearInterval(autoScrollInterval);
+          autoScrollInterval = setInterval(() => {
+            if (isScrolling || isTouching) return;
 
-  // Update button visibility
-  function updateButtonVisibility() {
-    const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-    leftBtn.classList.toggle('hidden', gallery.scrollLeft <= 10);
-    rightBtn.classList.toggle('hidden', gallery.scrollLeft >= maxScroll - 10);
-  }
+            const scrollAmount = getScrollAmount();
+            const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+            const currentScroll = gallery.scrollLeft;
 
-  // Event listeners
-  gallery.addEventListener('scroll', updateButtonVisibility);
-  
-  // Mouse interactions
-  gallery.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
-  gallery.addEventListener('mouseleave', startAutoScroll);
-  
-  // Touch interactions
-  gallery.addEventListener('touchstart', () => {
-    isTouching = true;
-    clearInterval(autoScrollInterval);
-  }, { passive: true });
-  
-  gallery.addEventListener('touchend', () => {
-    isTouching = false;
-    setTimeout(() => {
-      if (!isTouching) {
-        resetAutoScroll();
-      }
-    }, 1000);
-  }, { passive: true });
+            // If we're at or near the end, scroll back to start
+            if (currentScroll + scrollAmount >= maxScroll - 10) {
+              gallery.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+              });
+            }
+            // If we're not at the last item, scroll to next item
+            else {
+              // Find which item we should scroll to
+              let targetItem;
+              for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                const itemLeft = item.offsetLeft;
+                const itemRight = itemLeft + item.offsetWidth;
 
-  // Start auto-scroll after a short delay
-  setTimeout(startAutoScroll, 1000);
-});
-</script>
+                // Find the first item that's not fully visible
+                if (itemRight > currentScroll + gallery.clientWidth) {
+                  targetItem = item;
+                  break;
+                }
+              }
 
-      <!-- Footer section -->
-  <footer class="text-center text-white" style="background-color:#3c8dbc;" id="footer">
-    <div class="container p-4">
-      <section class="mb-4">
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="https://www.facebook.com/BrooklynJohnDeweyHsInfo/" role="button">
-          <img src="{{url_for('static', filename='images/facebook.png')}}" alt="Facebook">
-        </a>
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #f81c1c" href="https://www.johndeweyhighschool.org/" role="button">
-          <img src="{{url_for('static', filename='images/jdhs.png')}}" alt="JDHS Website">
-        </a>
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="https://www.instagram.com/johndeweybk/" role="button">
-          <img src="{{url_for('static', filename='images/instagram.png')}}" alt="Instagram">
-        </a>
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #edededc0" href="https://github.com/Hahalxl" role="button">
-          <img src="{{url_for('static', filename='images/github.png')}}" alt="GitHub">
-        </a>
-      </section>
+              // If we found a target item, scroll to it
+              if (targetItem) {
+                gallery.scrollTo({
+                  left: targetItem.offsetLeft - 10, // 10px padding
+                  behavior: 'smooth'
+                });
+              }
+              // Otherwise scroll by the default amount
+              else {
+                gallery.scrollBy({
+                  left: scrollAmount,
+                  behavior: 'smooth'
+                });
+              }
+            }
+          }, 5000);
+        }
 
-      <section class="mb-4">
-        <p>
-          Thank you for participating in this event! See below for more information about this website.
-        </p>
-      </section>
+        function resetAutoScroll() {
+          clearInterval(autoScrollInterval);
+          startAutoScroll();
+        }
 
-      <section class="">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">John Dewey High School</h5>
-            <ul class="list-unstyled mb-0">
-              <li><a href="https://www.johndeweyhighschool.org/" class="text-white">Main website</a></li>
-              <li><a href="https://www.instagram.com/johndeweybk/" class="text-white">Instagram</a></li>
-              <li><a href="https://www.facebook.com/BrooklynJohnDeweyHsInfo/" class="text-white">Facebook</a></li>
-            </ul>
+        // Update button visibility
+        function updateButtonVisibility() {
+          const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+          leftBtn.classList.toggle('hidden', gallery.scrollLeft <= 10);
+          rightBtn.classList.toggle('hidden', gallery.scrollLeft >= maxScroll - 10);
+        }
+
+        // Event listeners
+        gallery.addEventListener('scroll', updateButtonVisibility);
+
+        // Mouse interactions
+        gallery.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+        gallery.addEventListener('mouseleave', startAutoScroll);
+
+        // Touch interactions
+        gallery.addEventListener('touchstart', () => {
+          isTouching = true;
+          clearInterval(autoScrollInterval);
+        }, { passive: true });
+
+        gallery.addEventListener('touchend', () => {
+          isTouching = false;
+          setTimeout(() => {
+            if (!isTouching) {
+              resetAutoScroll();
+            }
+          }, 1000);
+        }, { passive: true });
+
+        // Start auto-scroll after a short delay
+        setTimeout(startAutoScroll, 1000);
+      });
+    </script>
+
+    <!-- Footer section -->
+    <footer class="text-center text-white" style="background-color:#3c8dbc;" id="footer">
+      <div class="container p-4">
+        <section class="mb-4">
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998"
+            href="https://www.facebook.com/BrooklynJohnDeweyHsInfo/" role="button">
+            <img src="{{url_for('static', filename='images/facebook.png')}}" alt="Facebook">
+          </a>
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #f81c1c"
+            href="https://www.johndeweyhighschool.org/" role="button">
+            <img src="{{url_for('static', filename='images/jdhs.png')}}" alt="JDHS Website">
+          </a>
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac"
+            href="https://www.instagram.com/johndeweybk/" role="button">
+            <img src="{{url_for('static', filename='images/instagram.png')}}" alt="Instagram">
+          </a>
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #edededc0"
+            href="https://github.com/Hahalxl" role="button">
+            <img src="{{url_for('static', filename='images/github.png')}}" alt="GitHub">
+          </a>
+        </section>
+
+        <section class="mb-4">
+          <p>
+            Thank you for participating in this event! See below for more information about this website.
+          </p>
+        </section>
+
+        <section class="">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">John Dewey High School</h5>
+              <ul class="list-unstyled mb-0">
+                <li><a href="https://www.johndeweyhighschool.org/" class="text-white">Main website</a></li>
+                <li><a href="https://www.instagram.com/johndeweybk/" class="text-white">Instagram</a></li>
+                <li><a href="https://www.facebook.com/BrooklynJohnDeweyHsInfo/" class="text-white">Facebook</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">About Us</h5>
+              <ul class="list-unstyled mb-0">
+                <li><a href="https://github.com/Hahalxl" class="text-white">Alexander's GitHub</a></li>
+                <li><a href="https://github.com/abcd123alex" class="text-white">Alex's GitHub</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Partner Organizations</h5>
+              <ul class="list-unstyled mb-0">
+                <li><a href="https://nysmea.wildapricot.org/" class="text-white">New York State Marine Education
+                    Association</a></li>
+                <li><a href="https://cityparksfoundation.org/" class="text-white">City Parks Foundation</a></li>
+                <li><a href="https://www.billionoysterproject.org/" class="text-white">Billion Oyster Project</a></li>
+                <li><a href="https://nyaquarium.com/" class="text-white">New York Aquarium</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Tools</h5>
+              <ul class="list-unstyled mb-0">
+                <li><a href="https://ngrok.com/" class="text-white">Ngrok</a></li>
+                <li><a href="https://www.python.org/" class="text-white">Python</a></li>
+                <li><a href="https://git-scm.com/" class="text-white">Git</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">About Us</h5>
-            <ul class="list-unstyled mb-0">
-              <li><a href="https://github.com/Hahalxl" class="text-white">Alexander's GitHub</a></li>
-              <li><a href="https://github.com/abcd123alex" class="text-white">Alex's GitHub</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Partner Organizations</h5>
-            <ul class="list-unstyled mb-0">
-              <li><a href="https://nysmea.wildapricot.org/" class="text-white">New York State Marine Education Association</a></li>
-              <li><a href="https://cityparksfoundation.org/" class="text-white">City Parks Foundation</a></li>
-              <li><a href="https://www.billionoysterproject.org/" class="text-white">Billion Oyster Project</a></li>
-              <li><a href="https://nyaquarium.com/" class="text-white">New York Aquarium</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Tools</h5>
-            <ul class="list-unstyled mb-0">
-              <li><a href="https://ngrok.com/" class="text-white">Ngrok</a></li>
-              <li><a href="https://www.python.org/" class="text-white">Python</a></li>
-              <li><a href="https://git-scm.com/" class="text-white">Git</a></li>
-            </ul>
-          </div>
+        </section>
+
+        <div class="text-center p-3 footer-end" style="background-color: rgba(0, 0, 0, 0.2)">
+          Backend: Alexander Liang He<br>
+          Frontend: Alexander Liang He & Alex Liu
         </div>
-      </section>
-
-      <div class="text-center p-3 footer-end" style="background-color: rgba(0, 0, 0, 0.2)">
-      Backend: Alexander Liang He<br>
-      Frontend: Alexander Liang He & Alex Liu
       </div>
-    </div>
-    
 
-  </footer>
+
+    </footer>
   </main>
 
   <!-- Record form modal -->
@@ -472,16 +496,18 @@ document.addEventListener('DOMContentLoaded', function() {
           <form action="/record">
             <div class="div-input">
               <label for="Name" class="inputing">Name:*</label>
-              <input type="text" class="input-first" name="first_name" placeholder="First Name*"  required>
-              <input type="text" class="input-last" name="last_name" placeholder="Last Name*"  required>
+              <input type="text" class="input-first" name="first_name" placeholder="First Name*" required>
+              <input type="text" class="input-last" name="last_name" placeholder="Last Name*" required>
               <label for="osis" class="inputing">OSIS/Student ID:</label>
-              <input type="tel" name="osis" class="inputs" placeholder="Leave blank if you don't have one" maxlength="9" inputmode="numeric" pattern="\d{1,9}">
+              <input type="tel" name="osis" class="inputs" placeholder="Leave blank if you don't have one" maxlength="9"
+                inputmode="numeric" pattern="\d{1,9}">
               <label for="email" class="inputing">Email:*</label>
-              <input type="email" class="inputs" name="email" placeholder="example@email.com*"required>
+              <input type="email" class="inputs" name="email" placeholder="example@email.com*" required>
 
-              <label for="organization" class="inputing">Organization/School:</label> 
+              <label for="organization" class="inputing">Organization/School:</label>
               <div class="dropdown" id="orgDropdown">
-                <input type="text" class="dropdown-input" placeholder="Select or type organization..." name="organization"/>
+                <input type="text" class="dropdown-input" placeholder="Select or type organization..."
+                  name="organization" />
                 <span class="dropdown-arrow"></span>
                 <div class="dropdown-list">
                   <input type="text" class="dropdown-search" placeholder="Search organization/schools..." />
@@ -494,11 +520,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
               <div id="otherOrg">
                 <label id="otherlabel" class="inputing" for="otherOrgInput">Other Organization:</label>
-                <input class="inputs" type="text" id="otherOrgInput" name="organizations" placeholder="Enter organization name"/>
+                <input class="inputs" type="text" id="otherOrgInput" name="organizations"
+                  placeholder="Enter organization name" />
               </div>
 
               <script>
-                (function(){
+                (function () {
                   const dropdown = document.getElementById('orgDropdown');
                   const dropdownInput = dropdown.querySelector('.dropdown-input');
                   const dropdownList = dropdown.querySelector('.dropdown-list');
@@ -610,10 +637,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
               <p class="required-note">* Required fields</p>
               <div class="div-reset">
-                  <button type="reset" class="record-clear" data-bs-toggle="modal" data-bs-target="#confirmResetModal">
-                      <img class="record-clear-image" src="{{url_for('static', filename='images/restart.png')}}" alt="Reset">
-                  </button>
-                  <button type="submit" class="record-submit">Record</button>
+                <button type="reset" class="record-clear" data-bs-toggle="modal" data-bs-target="#confirmResetModal">
+                  <img class="record-clear-image" src="{{url_for('static', filename='images/restart.png')}}"
+                    alt="Reset">
+                </button>
+                <button type="submit" class="record-submit">Record</button>
               </div>
           </form>
         </div>
@@ -622,9 +650,9 @@ document.addEventListener('DOMContentLoaded', function() {
           <h5 class="footer-text">Made by Alex</h5>
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         </div>
-        </div>
       </div>
     </div>
+  </div>
   </div>
 
   <div class="modal fade" id="admin-login">
@@ -653,4 +681,5 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
 </body>
+
 </html>

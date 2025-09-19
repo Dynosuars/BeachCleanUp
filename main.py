@@ -19,6 +19,7 @@ DOMAIN = os.getenv("DOMAIN")
 PORT = config["PORT"]
 
 
+
 @app.route("/error")
 def error():
     try:
@@ -179,5 +180,5 @@ def logout():
 
 if(__name__ == "__main__"):
     server = ngrok.forward(PORT, authtoken=token, domain=DOMAIN)
-    print(f" * Server is live at {server.url()}")
+    print(f" * Server is live! at {server.url()}")
     app.run(host="0.0.0.0", port=PORT, debug=False)
