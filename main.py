@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, url_for, redirect, session, s
 from library.person.person import *
 from library.function import functions
 from dotenv import load_dotenv
-import os, ngrok, secrets, logging, json
+import os, ngrok, secrets, logging, json, waitress
 
 # Disable Flask's default logging to keep the console clean
 log = logging.getLogger('werkzeug')
@@ -179,6 +179,4 @@ def logout():
     return redirect(url_for("index"))
 
 if(__name__ == "__main__"):
-    server = ngrok.forward(PORT, authtoken=token, domain=DOMAIN)
-    print(f" * Server is live! at {server.url()}")
-    app.run(host="0.0.0.0", port=PORT, debug=False)
+    waitress.serve(app, host="0.0.0.0", port=5000, threads=8)
